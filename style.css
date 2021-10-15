@@ -51,20 +51,17 @@
     width: 60px;
     height: 60px;
     background: red;
-    transition: height 1s, width 1s , margin 1s;
+    transition: transform 1s;
 }
 
 /* Risoluzione EX5 */
 .ex-5-square:hover{
-    height: 120px;
-    width: 120px;
-    margin: -10px;
+    transform: scale(2);
 }
 
 .ex-5-square:active{
-    height: 30px;
-    width: 30px;
-    margin: 35px;
+    transform: scale(0.5);
+
 }
 
 .ex-6-img, .ex-7-img, .ex-8-img {
@@ -86,6 +83,7 @@
 
 /* Risoluzione EX7 */
 .ex-7-img:hover{
+    filter: grayscale(0.5);
     filter: sepia(0.5);
 }
 
@@ -95,22 +93,23 @@
 
 /* Risoluzione EX8 */
 .ex-8-img:hover{
-    filter: sepia(0.9);
+    filter: grayscale(0.7);
+    filter: sepia(0.7);
     border-radius: 20px;
 }
 
 .ex-9-img {
     margin: 50px 100px;
     width: 400px;
-    transition: filter 2s, width 2s, border-radius 2s, margin 2s;
+    transition: filter 2s, border-radius 2s, transform 2s;
 }
 
 /* Risoluzione EX9 */
 .ex-9-img:hover{
-    filter: sepia(0.9);
+    filter: grayscale(0.7);
+    filter: sepia(0.7);
     border-radius: 30px;
-    width: 600px;
-    margin: 0;
+    transform: scale(1.5);
 }
 
 .ex-10-icon {
@@ -130,17 +129,13 @@
 }
 
 .ex-11-icon:hover{
-    animation: loading-hover 4s ;
+    animation: loading-hover 2s ;
 }
 
 /* Risoluzione EX11 */
 @keyframes loading-hover{
-    95%{
+    90%{
         transform: rotate(310deg);
-    }
-
-    100%{
-        transform: rotate(0deg);
     }
 }
 
@@ -174,15 +169,112 @@
     height: 20px;
 }
 
-/*
-.ex-12-button:hover{
-    transition: left 1s, right 1s;
+/* Risoluzione EX12 */ 
+.ex-12-button:hover .ex-12-top-white{
+    animation: ex-12-top 2s linear;
 }
 
-.ex-12-top-white{
-    left: 80%;
+@keyframes ex-12-top{
+    0%{
+        left: 10%;
+    }
+
+    50%{
+        left: calc( 100% - 60px);
+    }
+
+    100%{
+        left: 10%;
+    }
 }
 
-.ex-12-bottom-white{
-    right: 80%;
-} */
+.ex-12-button:hover .ex-12-bottom-white{
+    animation: ex-12-bottom 2s linear;
+}
+
+@keyframes ex-12-bottom{
+    0%{
+        right: 20%;
+    }
+
+    50%{
+        right: calc( 100% - 60px);
+    }
+
+    100%{
+        right: 20%;
+    }
+}
+
+/* Risoluzione EX13 */ 
+.ex-13-button:hover .ex-13-top-white{
+    animation: ex-13-top 2s linear;
+}
+
+@keyframes ex-13-top{
+    0%{
+        top: -10px;
+        left: 10%;
+    }
+
+    25%{
+        top: -10px;
+        left: calc( 100% - 30px );
+    }
+
+    50%{
+        top: calc( 100% - 10px);
+        left: calc( 100% - 30px );
+    }
+
+    75%{
+        top: calc( 100% - 10px);
+        left: -30px;
+    }
+
+    90%{
+        top: -10px;
+        left: -30px;
+    }
+
+    100%{
+        top: -10px;
+        left: 10%;
+    }
+}
+
+.ex-13-button:hover .ex-13-bottom-white{
+    animation: ex-13-bottom 2s linear;
+}
+
+@keyframes ex-13-bottom{
+    0%{
+        bottom: -10px;
+        right: 20%;
+    }
+
+    25%{
+        bottom: -10px;
+        right: calc( 100% - 30px );
+    }
+
+    50%{
+        bottom: calc( 100% - 10px );
+        right: calc( 100% - 30px );
+    }
+
+    75%{
+        bottom: calc( 100% - 10px );
+        right: -30px;
+    }
+
+    90%{
+        bottom: calc( 100% - 10px );
+        right: -30px;
+    }
+
+    100%{
+        bottom: -10px;
+        right: 20%;
+    }
+}
